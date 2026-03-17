@@ -550,7 +550,7 @@ export default function MaiatApp() {
                 <div className="flex flex-col items-center gap-2">
                   <div className="flex items-center gap-2">
                     <a
-                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just claimed my Maiat Trust Passport 🛡️\n\n${result.ensFullName} — my verifiable identity is live.\n\nClaim yours →`)}&url=${encodeURIComponent(`https://passport.maiat.io/share/${result.ensName}`)}`}
+                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just claimed my Maiat Trust Passport 🛡️\n\n${result.ensFullName} — my verifiable identity is live.\n\nI earned ${result.scarabBalance} 🪲 Scarab on registration.\n\nClaim yours →`)}&url=${encodeURIComponent(`https://passport.maiat.io/share/${result.ensName}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setShared(true)}
