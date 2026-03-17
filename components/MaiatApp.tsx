@@ -335,8 +335,8 @@ export default function MaiatApp() {
             <div className="hidden sm:flex items-center gap-2">
               <button
                 onClick={async () => { await logout(); window.location.reload(); }}
-                className={`text-[10px] font-mono font-bold px-3 py-2 rounded-full border transition-all hover:opacity-70 ${isDarkMode ? 'border-white/10 text-white/60 hover:border-red-500/30 hover:text-red-400' : 'border-black/10 text-black/60 hover:border-red-500/30 hover:text-red-500'}`}
-                title="Disconnect wallet"
+                className={`text-[10px] font-mono font-bold px-3 py-2 rounded-full border transition-all cursor-pointer active:scale-95 hover:scale-105 ${isDarkMode ? 'border-white/10 text-white/60 hover:border-red-500/50 hover:text-red-400 hover:bg-red-500/10' : 'border-black/10 text-black/60 hover:border-red-500/50 hover:text-red-500 hover:bg-red-500/10'}`}
+                title="Click to disconnect wallet"
               >
                 {walletAddress.slice(0, 6)}…{walletAddress.slice(-4)}
               </button>
