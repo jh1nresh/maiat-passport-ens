@@ -30,6 +30,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SharePage({ params }: Props) {
   const { name } = await params;
   const cleanName = name.replace(/\.maiat\.eth$/, '').toLowerCase();
-  // Redirect to main page with referral
-  redirect(`/?ref=${cleanName}`);
+
+  return (
+    <div>
+      <meta httpEquiv="refresh" content={`2;url=/?ref=${cleanName}`} />
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        height: '100vh', background: '#000', color: '#fff',
+        fontFamily: 'system-ui, sans-serif',
+      }}>
+        <p style={{ fontSize: '14px', opacity: 0.6 }}>
+          Redirecting to {cleanName}.maiat.eth...
+        </p>
+      </div>
+    </div>
+  );
 }
