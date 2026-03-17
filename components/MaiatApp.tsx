@@ -334,7 +334,7 @@ export default function MaiatApp() {
           {authenticated && walletAddress ? (
             <div className="hidden sm:flex items-center gap-2">
               <button
-                onClick={() => logout()}
+                onClick={async () => { await logout(); window.location.reload(); }}
                 className={`text-[10px] font-mono font-bold px-3 py-2 rounded-full border transition-all hover:opacity-70 ${isDarkMode ? 'border-white/10 text-white/60 hover:border-red-500/30 hover:text-red-400' : 'border-black/10 text-black/60 hover:border-red-500/30 hover:text-red-500'}`}
                 title="Disconnect wallet"
               >
@@ -377,7 +377,7 @@ export default function MaiatApp() {
               {authenticated ? (
                 <>
                   <a href="https://app.maiat.io" className={`w-full py-3 rounded-full text-center text-[10px] font-bold uppercase tracking-widest no-underline ${isDarkMode ? 'bg-white text-black' : 'bg-black text-white'}`}>Launch App</a>
-                  <button onClick={() => { logout(); setIsMobileMenuOpen(false); }} className={`w-full py-3 rounded-full text-[10px] font-bold uppercase tracking-widest ${isDarkMode ? 'text-red-400 border border-red-500/20' : 'text-red-500 border border-red-500/20'}`}>Disconnect</button>
+                  <button onClick={async () => { await logout(); setIsMobileMenuOpen(false); window.location.reload(); }} className={`w-full py-3 rounded-full text-[10px] font-bold uppercase tracking-widest ${isDarkMode ? 'text-red-400 border border-red-500/20' : 'text-red-500 border border-red-500/20'}`}>Disconnect</button>
                 </>
               ) : (
                 <button onClick={() => { login(); setIsMobileMenuOpen(false); }} className={`w-full py-3 rounded-full text-[10px] font-bold uppercase tracking-widest ${isDarkMode ? 'bg-white text-black' : 'bg-black text-white'}`}>Connect Wallet</button>
