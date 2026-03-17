@@ -8,7 +8,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { name } = await params;
   const cleanName = name.replace(/\.maiat\.eth$/, '').toLowerCase();
-  const ogUrl = `/api/og?name=${encodeURIComponent(cleanName)}`;
+  const ogUrl = `https://passport.maiat.io/api/og?name=${encodeURIComponent(cleanName)}`;
 
   return {
     title: `${cleanName}.maiat.eth — Maiat Passport`,
